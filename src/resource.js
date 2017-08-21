@@ -81,7 +81,7 @@ function doWithHTML(html){
     //console.log(keywords)
     var json=JSON.stringify({data:data,keywords:keywords});
     //设置缓存期限2分钟
-    res_tmp.setHeader('Cache-Control','max-age='+1000*60*2);
+    res_tmp.setHeader('Cache-Control','max-age='+60*5);
     //res_tmp.setHeader('Cache-Control','max-age='+0);
 
     res_tmp.setHeader('Content-Length',new Buffer(json).length);
