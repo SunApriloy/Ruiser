@@ -80,7 +80,7 @@ function doWithHTML(html){
     var keywords=result.filter(item=>/[\u0080-\uffff]/.test(item['word']));  
     //console.log(keywords)
     var json=JSON.stringify({data:data,keywords:keywords});
-    //设置缓存期限2分钟
+    //设置缓存期限5分钟
     res_tmp.setHeader('Cache-Control','max-age='+60*5);
     //res_tmp.setHeader('Cache-Control','max-age='+0);
 
