@@ -406,7 +406,17 @@ xhr.send(null);
 function serilizeDate(str){
   var date;
   var time=new Date();
-  if(str.indexOf('小时前')>-1){
+  if(str.indexOf('秒前')>-1){
+    time.setSeconds(time.getSeconds()-str.match(/\w+/)[0]);
+  }
+  else if(str.indexOf('分钟前')>-1){
+    time.setMinutes(time.getMinutes()-str.match(/\w+/)[0]);
+  }
+  else if(str.indexOf('半小时前')>-1){
+    time.setHours(time.getHours()-1);
+    time.setMinutes(time.getMinutes()+30);
+  }
+  else if(str.indexOf('小时前')>-1){
     time.setHours(time.getHours()-str.match(/\w+/)[0]);
   }
   else if(str.indexOf('昨天')>-1){
