@@ -21630,7 +21630,7 @@ xhr.onload = function () {
     //console.log('date')
     //
     //myChart.hideLoading();
-    console.log(xhr.responseText);
+    //console.log(xhr.responseText);
     response = JSON.parse(xhr.responseText);
 
     var typeMap = new Map(); //类型统计
@@ -21990,6 +21990,11 @@ xhr.onload = function () {
     console.log('数据获取失败');
   }
 };
+xhr.onprogress = function (e) {
+  //console.log(e.loaded/e.total);
+  //console.log((100*e.loaded/e.total).toFixed(2)+'%');
+  $('#progress').style.width = (100 * e.loaded / e.total).toFixed(2) + '%';
+};
 var url = '/source';
 xhr.open('get', url, true);
 xhr.send(null);
@@ -22045,6 +22050,10 @@ function createXHR() {
   }
 }
 
+function $(name) {
+  if (name[0] == '#') return document.querySelector(name);else return document.querySelectorAll(name);
+}
+
 /***/ }),
 /* 91 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -22085,7 +22094,7 @@ exports = module.exports = __webpack_require__(27)(undefined);
 
 
 // module
-exports.push([module.i, "body{\r\n  background-color: #E0F8E0;\r\n}", ""]);
+exports.push([module.i, "*{padding:0;margin:0}\r\nbody{\r\n  background-color: #E0F8E0;\r\n}\r\n#progress{height:2px;background: #77b6ff;position:fixed;left:0;top:0;transition:width ease 1s;}", ""]);
 
 // exports
 

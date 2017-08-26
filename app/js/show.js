@@ -33,7 +33,7 @@ xhr.onload=function(){
       //console.log('date')
       //
       //myChart.hideLoading();
-      console.log(xhr.responseText);
+      //console.log(xhr.responseText);
       response=JSON.parse(xhr.responseText);
       
       var typeMap=new Map();//类型统计
@@ -399,6 +399,11 @@ xhr.onload=function(){
     console.log('数据获取失败')
   }
 };
+xhr.onprogress=function(e){
+  //console.log(e.loaded/e.total);
+  //console.log((100*e.loaded/e.total).toFixed(2)+'%');
+  $('#progress').style.width=(100*e.loaded/e.total).toFixed(2)+'%';
+}
 var url='/source';
 xhr.open('get',url,true);
 xhr.send(null);
@@ -458,4 +463,9 @@ function createXHR(){
   }else{
     throw new Error('No XHR object available.')
   }
+}
+
+function $(name){
+  if(name[0]=='#')return document.querySelector(name);
+  else return document.querySelectorAll(name);
 }
