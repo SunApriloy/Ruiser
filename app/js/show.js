@@ -399,11 +399,12 @@ xhr.onload=function(){
     console.log('数据获取失败')
   }
 };
-xhr.onprogress=function(e){
+//改用pace.js
+/* xhr.onprogress=function(e){
   //console.log(e.loaded/e.total);
   //console.log((100*e.loaded/e.total).toFixed(2)+'%');
   $('#progress').style.width=(100*e.loaded/e.total).toFixed(2)+'%';
-}
+} */
 var url='/source';
 xhr.open('get',url,true);
 xhr.send(null);

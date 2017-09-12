@@ -1,0 +1,18 @@
+#box{
+    margin-left: 300px;
+    width: 500px;
+    height:500px;
+    background-color:lightblue;
+    position:relative;
+    }
+#tooltip{
+    z-index: 1000;
+    position: absolute;
+    top:0;
+    left:0;
+    visibility:hidden;
+    width: 200px;
+    height: 35px;
+    line-height: 35px;
+    background-color:#eee;
+}
