@@ -1,4 +1,5 @@
 ### [睿思](http://rs.xidian.edu.cn/portal.php)用户行为分析
+![image](http://img.blog.csdn.net/20170915090834833?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZmVuZ3hpYW94aWFvXzE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 #### 简介： 本项目基于Node.js，辅以echarts模块和nodejieba模块。其中echarts模块完成图表的绘制，nodejieba完成中文分词以生成关键词，echarts-wordcloud完成词云的制作，使用webpack打包静态文件。
 #### 使用步骤：
 1. `npm install`安装依赖包
